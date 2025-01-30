@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "${HTTP_PORT}:8069"
+    volumes:
+      - ./addons:/mnt/extra-addons
+      - odoo_data:/var/lib/odoo
+    env_file:
+      - .env
+    # For developers using host PostgreSQL, make sure to:
+    # 1. Set DB_HOST in .env to your host IP (not 'localhost' or '127.0.0.1')
+    # 2. Configure PostgreSQL to accept connections from Docker network
+    network_mode: "host"  # This allows connecting to host PostgreSQL
+
+volumes:
+  odoo_data:
+    driver: local

@@ -1,0 +1,29 @@
+[options]
+# Fixed Configuration
+addons_path = /mnt/extra-addons,/usr/lib/python3/dist-packages/odoo/addons
+data_dir = /var/lib/odoo
+
+# Database Configuration
+db_host = ${DB_HOST}
+db_port = ${DB_PORT}
+db_user = ${DB_USER}
+db_password = ${DB_PASSWORD}
+db_name = ${DB_NAME}
+
+# Security Configuration
+admin_passwd = ${ADMIN_PASSWORD}
+list_db = True
+
+# Server Configuration
+http_port = ${HTTP_PORT}
+proxy_mode = True
+log_level = ${LOG_LEVEL}
+
+# Performance Tuning
+max_cron_threads = ${MAX_CRON_THREADS}
+workers = ${WORKERS}
+limit_memory_hard = ${LIMIT_MEMORY_HARD}
+limit_memory_soft = ${LIMIT_MEMORY_SOFT}
+limit_request = ${LIMIT_REQUEST}
+limit_time_cpu = ${LIMIT_TIME_CPU}
+limit_time_real = ${LIMIT_TIME_REAL}
